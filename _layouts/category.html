@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/assets/css/blog.css">
+<script src="/assets/js/tag-select.js"></script>
+
+<div class="content-banner">
+  <div class="content-banner-text">
+    <h1>{{ page.category }}</h1>
+    <p>{{ page.excerpt }}</p>
+  </div>
+  <img src="{{ '/assets/images/social-media.jpg' | relative_url }}" alt="PC Banner" class="pc-banner">
+</div>
+
+<main class="blog-content">
+  <div class="filter-container">
+    <div class="breadcrumb">
+    <a href="/">首页</a> / 
+    <a href="/blog/">博客</a> / 
+    {{ page.title }}
+    </div>
+    <select id="tag-select">
+      <option value="">标签</option>
+    </select>
+  </div>
+  <div class="category-posts">
+  {% for post in site.categories[page.category] %}
+      <div class="card" data-category="{{ post.categories | join: ',' }}" data-tag="{{ post.tags | join: ',' }}">
+        <article class="post-item">
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <p class="post-excerpt">    
+            {% if post.excerpt %}
+              {{ post.excerpt }}
+            {% else %}
+              {% assign first_paragraph = post.content | split: '<p>' | last | split: '</p>' | first %}
+              {{ first_paragraph | strip_html | truncatewords: 50 }}
+            {% endif %}
+          </p>
+        </article>
+          <div class="tag-meta">
+            <div class="tag-box">{{ post.categories | join: ', ' }}</div>
+            <div class="tag-box">{{ post.tags | join: ', ' }}</div>
+          </div>
+          <div class="post-meta">
+            <img src="{{ site.data.authors[post.author].avatar }}" alt="{{ site.data.authors[post.author].display_name }} 的头像" class="author-avatar">
+            <span>{{ site.data.authors[post.author].display_name }}</span>
+            {% if post.date %}
+              <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time>
+            {% endif %}
+          </div>
+      </div>
+  {% endfor %}
+  </div>
+  <div id="pagination"></div>
+</main>
+

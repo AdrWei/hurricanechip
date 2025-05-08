@@ -1,0 +1,37 @@
+title: 橡树工作室
+description: 助力品牌出海
+baseurl: ""
+url: "https://adrwei.github.io"
+
+# 插件配置
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+# 默认布局设置
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# 集合配置
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  blogs:
+    output: true   # 允许生成分类页
+    permalink: /blog/:name/  # 控制URL格式
+  policies:
+    output: true   # 允许生成分类页
+    permalink: /policy/:name/  # 控制URL格式
+
+# 需要特别保留的HTML文件
+include:
+  - CNAME
+  - .nojekyll
+
+# 添加permalink设置
+permalink: /blog/:categories/:title/

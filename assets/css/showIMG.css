@@ -1,0 +1,37 @@
+#showimg-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding:0 20px
+}
+
+#showimg-container figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#showimg-container img {
+    height: 100%;
+    background-color: var(--VI-dark);
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+}
+
+#showimg-container figcaption {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
+}
+
+.showimg-pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.showimg-pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+}

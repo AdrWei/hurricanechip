@@ -1,0 +1,99 @@
+.breadcrumb{
+  margin-top: var(--header-height);
+}
+
+/* 统一调整尺寸 */
+article.post h1{font-size:calc(var(--base-size)*2);}
+article.post h2{font-size:calc(var(--base-size)*1.5);
+               padding-top:20px;}
+article.post h3{font-size:calc(var(--base-size)*1.2);}
+article.post h4 h5 h6 p{font-size:calc(var(--base-size)*1);
+                color:var(--VI-sub);}
+
+article.post {
+  max-width: 800px;
+  margin:0 auto;
+  padding: 30px;
+  line-height: 1.6;
+}
+
+article.post h1{
+  text-align:center;
+}
+
+article.post a{
+  color: #007bff;
+}
+
+.data {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-top: 1px solid #eee;
+  place-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.data img {
+  width: 30px;
+  aspect-ratio:1/1;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.data span {
+  font-weight: bold; /* 设置作者姓名加粗 */
+}
+
+.data time {
+    padding-left:15px;
+}
+
+article.post .content {
+  margin-bottom: 2em;
+}
+
+article.post .content img {
+  display:block;
+  max-width: 100%; /* 图片最大宽度为容器宽度 */
+  height: auto; /* 高度自动调整 */
+  width:unset;
+}
+
+article.post .content pre {
+  background-color: #f0f0f0; /* 代码块背景颜色 */
+  padding: 10px;
+  overflow-x: auto; /* 水平滚动条 */
+}
+
+article.post .content code {
+  font-family: monospace; /* 代码字体 */
+}
+
+article.post .content table {
+  width: 100%; /* 设置表格宽度为容器宽度 */
+  border-collapse: collapse; /* 合并边框 */
+  margin: 1em 0; /* 设置表格上下外边距 */
+}
+
+article.post .content th,
+article.post .content td {
+  border: 1px solid #ddd; /* 设置单元格边框 */
+  padding: 8px; /* 设置单元格内边距 */
+  text-align: left; /* 设置文本对齐方式 */
+}
+
+article.post .content th {
+  background-color: #f2f2f2; /* 设置表头背景颜色 */
+  font-weight: bold; /* 设置表头字体加粗 */
+}
+
+@media (max-width: 768px) {
+/* 统一调整尺寸 */
+article.post h1{font-size:calc(var(--base-size)*1.5);}
+article.post h2{font-size:calc(var(--base-size)*1.2);}
+}
+
+

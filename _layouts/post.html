@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="/assets/css/post.css">
+
+  <div class="breadcrumb-container">
+  <div class="breadcrumb">
+    <a href="/">首页</a> / 
+    <a href="/blog/">博客</a> / 
+    {% if page.categories %}
+      {% for category in page.categories %}
+        <a href="/blog/{{ category | slugify }}/">{{ category }}</a> {% unless forloop.last %}/ {% endunless %}
+      {% endfor %}
+    {% endif %}
+    / <span>{{ page.title }}</span>
+  </div>
+</div>
+
+<article class="post">
+    <h1>{{ page.title }}</h1>
+     <div class="data">
+        <img src="{{ site.data.authors[page.author].avatar }}" alt="{{ site.data.authors[page.author].display_name }} 的头像">
+        <span>{{ site.data.authors[page.author].display_name }}</span>
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">时间：{{ page.date | date: '%Y-%m-%d' }}</time>
+    </div>
+    <div class="content">
+      {{ content }}
+    </div>
+</article>
